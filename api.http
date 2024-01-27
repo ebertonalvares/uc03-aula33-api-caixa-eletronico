@@ -1,3 +1,6 @@
 ### status
 
 GET http://localhost:5000/status
+
+### Boas vindas
+GET http://localhost:5000/conta/1313-0

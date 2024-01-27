@@ -4,11 +4,11 @@ Aplicação criada durante as aulas do curso de Programador Web do Senac Pato Br
 
 Este programa simula as seguintes operações de um caixa eletrônico:
 
-- Rota de boas vindas
-- Rota de Extrato
-- Rota de Saldo
-- Rota de Depósito
-- Rota de Saque
+- [x] Rota de boas vindas
+- [ ] Rota de Extrato
+- [ ] Rota de Saldo
+- [ ] Rota de Depósito
+- [ ] Rota de Saque
 
 Não está contemplado o acesso via cartão e senha e nem o salvamento de informações em um banco dados.
 
