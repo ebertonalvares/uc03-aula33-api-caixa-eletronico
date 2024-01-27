@@ -56,6 +56,31 @@ app.get('/conta/:numero_conta', (request, response) => {
   }
 });
 
+
+// Rota Saldo
+app.get('/conta/:numero_conta/saldo', (request, response) => {
+  const { numero_conta } = request.params;
+
+  const contaEncontrada = contas.find(
+    (conta) => conta.numero_conta === numero_conta
+  )
+
+  if (contaEncontrada) {
+    // retornar os dados da conta
+    response.send({
+      "saldo": contaEncontrada.saldo
+    })
+  } else {
+    response.status(404).send({
+      "error": "Conta não encontrada"
+    })
+  }
+});
+
+
+
+
+
 app.listen(port, () => {
   console.log(`API rodando na porta ${port}`)
 })
