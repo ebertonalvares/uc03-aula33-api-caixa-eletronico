@@ -1,5 +1,5 @@
-const express = require('express')
-const { randomUUID } = require('crypto')
+import express from 'express'
+import { randomUUID } from 'node:crypto'
 
 const app = express()
 const port = 5000
