@@ -1,13 +1,16 @@
-### status
+### status ###
 
 GET http://localhost:5000/status
 
-### Boas vindas
+
+### Boas vindas ###
 GET http://localhost:5000/conta/1313-0
+Authorization: Bearer
 
 
-### Saldo
+### Saldo ###
 GET http://localhost:5000/conta/1313-0/saldo
+Authorization: Bearer token
 
 
 ### Depósito DINHEIRO
@@ -17,4 +20,36 @@ Content-Type: application/json
 {
   "valor": 100,
   "tipo": "DINHEIRO"
+}
+
+### Login pessoa
+POST http://localhost:5000/pessoas/Login
+Content-Type:application/json
+
+{
+  "usuario":"ebertonalvares",
+  "senha":123456"
+}
+
+###Cadastro pessoa###
+POST http://localhost:5000/pessoas/cadastrar
+Content-Type:application/json
+
+{
+  "nome_completo":"Advogado Paloma",
+  "cpf":"9876543210",
+  "usuario":"palomaadv",
+  "senha":"123456"
+}
+
+###Atualizar dados pessoa ###
+PATH http://localhost:5000/pessoas/idpessoa/atualizar
+Content-Type:application/json
+Authorization:Bearer token
+
+{
+  "nome_completo":"Eberton Mauricio Alvares",
+  "cpf":"123456",
+  "usuario":"eberton",
+  "senha":"123456"
 }
