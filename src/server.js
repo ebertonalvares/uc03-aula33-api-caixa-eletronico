@@ -1,7 +1,7 @@
 import express from 'express'
 import contasRotas from './rotas/conta.rotas.js'
 import mainRotas from './rotas/main.rotas.js'
-import loginRotas from './rotas login.rotas.js'
+import loginRotas from './rotas/login.rotas.js'
 import pessoaRotas from './rotas/pessoa.rotas.js'
 import {authorizeMiddleware} from './middlewares/auth.middleware.js'
 

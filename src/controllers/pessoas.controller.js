@@ -1,5 +1,9 @@
-import jwtUtils from "../utils/jwt.utils"
-import pessoaRepository from "../repositories/pessoa.repository"
+import {randomUUID} from 'node:crypto'
+
+import jwtUtils from "../utils/jwt.utils.js"
+import pessoaRepository from "../repositories/pessoa.repository.js"
+
+
 
 import database from "../database/index.js"
 const db = database.getDB()
@@ -16,7 +20,9 @@ class PessoaController {
             response.status(403).send({ message: "Já existe um cadastro de pessoa com este CPF" })
             return
         }
-        const pessoa = await pessoaRepository.create(nome_completo, cpf, usuario, senha)
+
+        const pessoa_id = randomUUID()
+        const pessoa = await pessoaRepository.create(pessoa_id, nome_completo, cpf, usuario, senha, "sem-acesso")
 
         response.send({
             message: "Cadastro de pessoa efetuado com sucesso",
